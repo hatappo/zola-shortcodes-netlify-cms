@@ -10,6 +10,8 @@
 3. Vimeo
 4. YouTube
 
+<img src="docs/screenshot-shortcodes-on-cms.png" width="480px">
+
 ### [Theme - DeepThought](https://github.com/RatanShreshtha/DeepThought)
 
 1. Chart
@@ -19,6 +21,9 @@
 5. Mermaid
 6. Vimeo
 7. YouTube
+
+<img src="docs/screenshot-DeepThought-shortcodes-in-blogui.png" width="240px"> <img src="docs/screenshot-DeepThought-shortcodes-in-netlifycms.png" width="240px">
+
 
 - [Docs](https://github.com/RatanShreshtha/DeepThought/blob/main/content/docs/extended-shortcodes/index.md)
 - [HTML](https://github.com/RatanShreshtha/DeepThought/tree/main/templates/shortcodes)
@@ -52,11 +57,6 @@ e.g. If you put the JS file in `static/js` directory, you can write the followin
 ## Original Shortcodes by Themes
 
 Choose one of `zola-shortcodes-netlify-cms.<THEME_NAME>.js` in `dist` directory, which you want.
-
-
-## Screenshot
-
-![/screenshot-shortcodes-on-cms.png](/screenshot-shortcodes-on-cms.png "")
 
 
 ## Reference
