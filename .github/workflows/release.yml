@@ -3,17 +3,24 @@ on:
   push:
     tags:
       - 'v*'
+name: Release
+jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: checkout
         uses: actions/checkout@v2
+      - name: Set version
+        id: vars
+        run: echo ::set-output name=tag::${GITHUB_REF#refs/*/}
       - name: release
         uses: svenstaro/upload-release-action@2.2.1
+        env:
+          RELEASE_VERSION: ${{ steps.vars.outputs.tag }}
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           file: zola-shortcodes-netlify-cms.js
-          asset_name: "zola-shortcodes-netlify-cms-${GITHUB_REF/refs\/tags\//}.js"
+          asset_name: "zola-shortcodes-netlify-cms-${RELEASE_VERSION}.js"
           tag: ${{ github.ref }}
           body: "No defference between script on the release and raw one in the repository"
           overwrite: true
