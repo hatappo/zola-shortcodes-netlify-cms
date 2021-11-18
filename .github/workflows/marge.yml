@@ -8,6 +8,8 @@ on:
       - main
     pull_request:
       - main
+    paths:
+    - 'src/**'
 
 jobs:
   merge:
