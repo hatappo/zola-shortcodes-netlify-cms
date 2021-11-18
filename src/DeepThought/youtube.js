@@ -1,11 +1,12 @@
 CMS.registerEditorComponent({
   id: "youtube",
   label: "YouTube",
-  fields: [{
-    name: "id",
-    label: "the video id (mandatory)",
-    widget: "string"
-  },
+  fields: [
+    {
+      name: "id",
+      label: "the video id (mandatory)",
+      widget: "string"
+    },
   ],
   pattern: /{{ youtube\(id="([a-zA-Z0-9]+)"\) }}/,
   fromBlock: function(match) {

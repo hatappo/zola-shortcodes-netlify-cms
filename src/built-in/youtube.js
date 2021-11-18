@@ -1,26 +1,27 @@
 CMS.registerEditorComponent({
   id: "youtube",
   label: "YouTube",
-  fields: [{
-    name: "id",
-    label: "the video id (mandatory)",
-    widget: "string"
-  },
-  {
-    name: "playlist",
-    label: "the playlist id (optional)",
-    widget: "string"
-  },
-  {
-    name: "autoplay",
-    label: "when set to \"true\", the video autoplays on load (optional)",
-    widget: "boolean"
-  },
-  {
-    name: "class",
-    label: "a class to add to the <div> surrounding the iframe (optional)",
-    widget: "string"
-  },
+  fields: [
+    {
+      name: "id",
+      label: "the video id (mandatory)",
+      widget: "string"
+    },
+    {
+      name: "playlist",
+      label: "the playlist id (optional)",
+      widget: "string"
+    },
+    {
+      name: "autoplay",
+      label: "when set to \"true\", the video autoplays on load (optional)",
+      widget: "boolean"
+    },
+    {
+      name: "class",
+      label: "a class to add to the <div> surrounding the iframe (optional)",
+      widget: "string"
+    },
   ],
   pattern: /{{ youtube\(id="([-a-zA-Z0-9]+)"(, playlist="([a-zA-Z0-9]+)")?(, autoplay=(true|false))?(, class="([a-zA-Z][-_.:a-zA-Z0-9 ]*)")?\) }}/,
   fromBlock: function(match) {

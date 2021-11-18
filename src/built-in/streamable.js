@@ -1,16 +1,17 @@
 CMS.registerEditorComponent({
   id: "streamable",
   label: "Streamable",
-  fields: [{
-    name: "id",
-    label: "the video id (mandatory)",
-    widget: "string"
-  },
-  {
-    name: "class",
-    label: "a class to add to the <div> surrounding the iframe (optional)",
-    widget: "string"
-  },
+  fields: [
+    {
+      name: "id",
+      label: "the video id (mandatory)",
+      widget: "string"
+    },
+    {
+      name: "class",
+      label: "a class to add to the <div> surrounding the iframe (optional)",
+      widget: "string"
+    },
   ],
   pattern: /{{ streamable\(id="([a-zA-Z0-9]+)"(, class="([a-zA-Z][-_.:a-zA-Z0-9 ]*)")?\) }}/,
   fromBlock: function(match) {
