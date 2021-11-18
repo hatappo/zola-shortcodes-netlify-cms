@@ -1,4 +1,5 @@
-# Zola Shortcodes for Netlify CMS editor
+# Zola Shortcodes for Netlify CMS Editor Components
+
 
 ## [built-in shortcodes in Zola](https://www.getzola.org/documentation/content/shortcodes/#built-in-shortcodes)
 
@@ -41,3 +42,15 @@ Choose one of `zola-shortcodes-netlify-cms.<THEME_NAME>.js` in `dist` directory,
 ## Screenshot
 
 ![/screenshot-shortcodes-on-cms.png](/screenshot-shortcodes-on-cms.png "")
+
+
+## Documents
+
+Netlify CMS Editor Components
+- [Creating Custom Widgets | Netlify CMS | Open-Source Content Management System](https://www.netlifycms.org/docs/custom-widgets/#registereditorcomponent)
+- [netlify-cms/index.js at 92d8c50272835201229d4265ef2ee18ee657dc17 · netlify/netlify-cms](https://github.com/netlify/netlify-cms/blob/92d8c50272835201229d4265ef2ee18ee657dc17/packages/netlify-cms-editor-component-image/src/index.js)
+
+Zola Shortcodes
+- [Shortcodes | Zola](https://www.getzola.org/documentation/content/shortcodes/)
+- [zola/components/templates/src/builtins/shortcodes at v0.14.1 · getzola/zola](https://github.com/getzola/zola/tree/v0.14.1/components/templates/src/builtins/shortcodes)
+
