@@ -1,12 +1,27 @@
 # Zola Shortcodes for Netlify CMS Editor Components
 
 
-## [built-in shortcodes in Zola](https://www.getzola.org/documentation/content/shortcodes/#built-in-shortcodes)
+## Shortcodes in Zola
 
-1. YouTube
-2. Vimeo
-3. Streamable
-4. Gist
+[Zola own built-in](https://www.getzola.org/documentation/content/shortcodes/#built-in-shortcodes)
+
+1. Gist
+2. Streamable
+3. Vimeo
+4. YouTube
+
+[Theme - DeepThought](https://github.com/RatanShreshtha/DeepThought)
+
+1. Chart
+2. Galleria
+3. Katex
+4. mapbox
+5. Mermaid
+6. Vimeo
+7. YouTube
+
+- [Docs](https://github.com/RatanShreshtha/DeepThought/blob/main/content/docs/extended-shortcodes/index.md)
+- [HTML](https://github.com/RatanShreshtha/DeepThought/tree/main/templates/shortcodes)
 
 
 ## Usage
@@ -44,7 +59,7 @@ Choose one of `zola-shortcodes-netlify-cms.<THEME_NAME>.js` in `dist` directory,
 ![/screenshot-shortcodes-on-cms.png](/screenshot-shortcodes-on-cms.png "")
 
 
-## Documents
+## Reference
 
 Netlify CMS Editor Components
 - [Creating Custom Widgets | Netlify CMS | Open-Source Content Management System](https://www.netlifycms.org/docs/custom-widgets/#registereditorcomponent)
