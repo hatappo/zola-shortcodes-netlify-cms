@@ -15,7 +15,7 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v2
-      - name: merge
+      - name: Merge by themes
         run: |
           mkdir -p dist
           for theme in `ls -d src/* | sed 's/src\///'` ;do
@@ -26,7 +26,7 @@ jobs:
             cat work/$theme/*.js > dist/zola-shortcodes-netlify-cms.$theme.js
           done
           rm -rf work
-      - name: merge
+      - name: Commit the merged ones
         run: |
           git config --local user.email "hatappo@users.noreply.github.com"
           git config --local user.name "Fumihiko Hata"

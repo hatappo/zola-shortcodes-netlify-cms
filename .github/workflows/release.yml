@@ -11,16 +11,16 @@ jobs:
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
     steps:
-      - name: checkout
+      - name: Checkout
         uses: actions/checkout@v2
       - name: set version
         id: vars
         run: echo ::set-output name=tag::${GITHUB_REF#refs/*/}
-      - name: make tarball
+      - name: Make tarball
         run: |
           cd dist
           tar -zcvf zola-shortcodes-netlify-cms.tar.gz *.js
-      - name: release
+      - name: Release
         uses: svenstaro/upload-release-action@2.2.1
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
