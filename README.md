@@ -7,9 +7,10 @@
 3. Streamable
 4. Gist
 
+
 ## Usage
 
-1. Add or checkout [the javascript file](/zola-shortcodes-netlify-cms.js) to the `static` directory in your Zola project.
+1. Add or checkout [the javascript file](/dist/zola-shortcodes-netlify-cms.built-in.js) to the `static` directory in your Zola project.
 2. Then, load it after the `netlify-cms.js` script tag.
 
 e.g. If you put the JS file in `static/js` directory, you can write the following in `stacic/admin/index.html`
@@ -26,14 +27,17 @@ e.g. If you put the JS file in `static/js` directory, you can write the followin
   </head>
   <body>
     <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
-    <script src="/js/zola-shortcodes-netlify-cms.js"></script><!-- HERE -->
+    <script src="/js/dist/zola-shortcodes-netlify-cms.built-in.js"></script><!-- HERE -->
   </body>
 </html>
-
 ```
+
+
+## Original Shortcodes by Themes
+
+Choose one of `zola-shortcodes-netlify-cms.<THEME_NAME>.js` in `dist` directory, which you want.
+
 
 ## Screenshot
 
 ![/screenshot-shortcodes-on-cms.png](/screenshot-shortcodes-on-cms.png "")
-
-
