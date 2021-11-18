@@ -23,7 +23,7 @@ jobs:
         uses: svenstaro/upload-release-action@2.2.1
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: zola-shortcodes-netlify-cms.tar.gz
+          file: dist/zola-shortcodes-netlify-cms.tar.gz
           asset_name: "zola-shortcodes-netlify-cms-${{ steps.vars.outputs.tag }}.tar.gz"
           tag: ${{ github.ref }}
           body: "No defference between files on this release and ones in the 'dist' directory."
