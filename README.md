@@ -3,14 +3,14 @@
 
 ## Shortcodes in Zola
 
-[Zola own built-in](https://www.getzola.org/documentation/content/shortcodes/#built-in-shortcodes)
+### [Zola own built-in](https://www.getzola.org/documentation/content/shortcodes/#built-in-shortcodes)
 
 1. Gist
 2. Streamable
 3. Vimeo
 4. YouTube
 
-[Theme - DeepThought](https://github.com/RatanShreshtha/DeepThought)
+### [Theme - DeepThought](https://github.com/RatanShreshtha/DeepThought)
 
 1. Chart
 2. Galleria
@@ -26,7 +26,7 @@
 
 ## Usage
 
-1. Add or checkout [the javascript file](/dist/zola-shortcodes-netlify-cms.built-in.js) to the `static` directory in your Zola project.
+1. Add or checkout [dist/zola-shortcodes-netlify-cms.built-in.js](/dist/zola-shortcodes-netlify-cms.built-in.js) to the `static` directory in your Zola project.
 2. Then, load it after the `netlify-cms.js` script tag.
 
 e.g. If you put the JS file in `static/js` directory, you can write the following in `stacic/admin/index.html`
