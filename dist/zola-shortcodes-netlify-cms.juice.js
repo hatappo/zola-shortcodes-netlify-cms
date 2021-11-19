@@ -1,70 +1,4 @@
 CMS.registerEditorComponent({
-  id: "chart",
-  label: "Chart",
-  fields: [
-    {
-      name: "body",
-      label: "the body text",
-      widget: "text"
-    },
-  ],
-  pattern: /^{% chart\(\) %}\n(.*?)\n^{% end %}$/ms,
-  fromBlock: function(match) {
-    return {
-      body: match[1],
-    };
-  },
-  toBlock: function(obj) {
-    const body = obj.body || '';
-    return `
-{% chart() %}
-${body}
-{% end %}
-`;
-  },
-  toPreview: function(obj) {
-    const body = obj.body || '';
-    return `
-{% chart() %}
-${body}
-{% end %}
-`;
-  },
-});
-CMS.registerEditorComponent({
-  id: "galleria",
-  label: "Galleria",
-  fields: [
-    {
-      name: "body",
-      label: "the body text",
-      widget: "text"
-    },
-  ],
-  pattern: /^{% galleria\(\) %}\n(.*?)\n^{% end %}$/ms,
-  fromBlock: function(match) {
-    return {
-      body: match[1],
-    };
-  },
-  toBlock: function(obj) {
-    const body = obj.body || '';
-    return `
-{% galleria() %}
-${body}
-{% end %}
-`;
-  },
-  toPreview: function(obj) {
-    const body = obj.body || '';
-    return `
-{% galleria() %}
-${body}
-{% end %}
-`;
-  },
-});
-CMS.registerEditorComponent({
   id: "gist",
   label: "Gist",
   fields: [
@@ -114,118 +48,28 @@ CMS.registerEditorComponent({
   },
 });
 CMS.registerEditorComponent({
-  id: "katex",
-  label: "Katex",
+  id: "issue",
+  label: "GitHub Issue",
   fields: [
     {
-      name: "body",
-      label: "the body text",
-      widget: "text"
-    },
-    {
-      name: "block",
-      label: "if true, add `mode=display` into type of the script tag.",
-      widget: "boolean"
-    },
-  ],
-  pattern: /^{% katex\(block=(true|false)\) %}\n(.*?)\n^{% end %}$/ms,
-  fromBlock: function(match) {
-    return {
-      block: match[1],
-      body: match[2],
-    };
-  },
-  toBlock: function(obj) {
-    const block = !!obj.block;
-    const body = obj.body || '';
-    return `
-{% katex(block=${block}) %}
-${body}
-{% end %}
-`;
-  },
-  toPreview: function(obj) {
-    const block = !!obj.block;
-    const body = obj.body || '';
-    return `
-{% katex(block=${block}) %}
-${body}
-{% end %}
-`;
-  },
-});
-CMS.registerEditorComponent({
-  id: "mapbox",
-  label: "Mapbox",
-  fields: [
-    {
-      name: "body",
-      label: "the body text",
-      widget: "text"
-    },
-    {
-      name: "zoom",
-      label: "zoom level. see https://docs.mapbox.com/help/glossary/zoom-level/",
+      name: "id",
+      label: "the issue id (mandatory)",
       widget: "number"
     },
   ],
-  pattern: /^{% mapbox\(zoom=([0-9]+)\) %}\n(.*?)\n^{% end %}$/ms,
+  pattern: /{{ issue\(id=([1-9][0-9]*)\) }}/,
   fromBlock: function(match) {
     return {
-      zoom: match[1],
-      body: match[2],
+      id: match[1],
     };
   },
   toBlock: function(obj) {
-    const zoom = obj.zoom ?? 10;
-    const body = obj.body || '';
-    return `
-{% mapbox(zoom=${zoom}) %}
-${body}
-{% end %}
-`;
+    const id = obj.id || '';
+    return `{{ issue(id=${id}) }}`;
   },
   toPreview: function(obj) {
-    const zoom = obj.zoom ?? 10;
-    const body = obj.body || '';
-    return `
-{% mapbox(zoom=${zoom}) %}
-${body}
-{% end %}
-`;
-  },
-});
-CMS.registerEditorComponent({
-  id: "mermaid",
-  label: "Mermaid",
-  fields: [
-    {
-      name: "body",
-      label: "the body text",
-      widget: "text"
-    },
-  ],
-  pattern: /^{% mermaid\(\) %}\n(.*?)\n^{% end %}$/ms,
-  fromBlock: function(match) {
-    return {
-      body: match[1],
-    };
-  },
-  toBlock: function(obj) {
-    const body = obj.body || '';
-    return `
-{% mermaid() %}
-${body}
-{% end %}
-`;
-  },
-  toPreview: function(obj) {
-    const body = obj.body || '';
-    return `
-{% mermaid() %}
-${body}
-{% end %}
-`;
+    const id = obj.id || '';
+    return `<a href="">Github Issue #${id}</a>`;
   },
 });
 CMS.registerEditorComponent({
@@ -270,20 +114,28 @@ CMS.registerEditorComponent({
       label: "the video id (mandatory)",
       widget: "string"
     },
+    {
+      name: "class",
+      label: "a class to add to the <div> surrounding the iframe (optional)",
+      widget: "string"
+    },
   ],
-  pattern: /{{ vimeo\(id="([0-9]+)"\) }}/,
+  pattern: /{{ vimeo\(id="([0-9]+)"(, class="([a-zA-Z][-_.:a-zA-Z0-9 ]*)")?\) }}/,
   fromBlock: function(match) {
     return {
       id: match[1],
+      class: match[3],
     };
   },
   toBlock: function(obj) {
     const id = obj.id || '';
-    return `{{ vimeo(id="${id}") }}`;
+    const c = !!obj.class ? `, class="${obj.class}"` : '';
+    return `{{ vimeo(id="${id}"${c}) }}`;
   },
   toPreview: function(obj) {
     const id = obj.id || '';
-    return `{{ vimeo(id="${id}") }}`;
+    const c = !!obj.class ? `, class="${obj.class}"` : '';
+    return `{{ vimeo(id="${id}"${c}) }}`;
   },
 });
 CMS.registerEditorComponent({
@@ -295,16 +147,37 @@ CMS.registerEditorComponent({
       label: "the video id (mandatory)",
       widget: "string"
     },
+    {
+      name: "playlist",
+      label: "the playlist id (optional)",
+      widget: "string"
+    },
+    {
+      name: "autoplay",
+      label: "when set to \"true\", the video autoplays on load (optional)",
+      widget: "boolean"
+    },
+    {
+      name: "class",
+      label: "a class to add to the <div> surrounding the iframe (optional)",
+      widget: "string"
+    },
   ],
-  pattern: /{{ youtube\(id="([a-zA-Z0-9]+)"\) }}/,
+  pattern: /{{ youtube\(id="([-a-zA-Z0-9]+)"(, playlist="([a-zA-Z0-9]+)")?(, autoplay=(true|false))?(, class="([a-zA-Z][-_.:a-zA-Z0-9 ]*)")?\) }}/,
   fromBlock: function(match) {
     return {
       id: match[1],
+      playlist: match[3],
+      autoplay: match[5],
+      class: match[7],
     };
   },
   toBlock: function(obj) {
     const id = obj.id || '';
-    return `{{ youtube(id="${id}") }}`;
+    const p = !!obj.playlist ? `, playlist="${obj.playlist}"` : '';
+    const a = !!obj.autoplay ? `, autoplay=${obj.autoplay}` : '';
+    const c = !!obj.class ? `, class="${obj.class}"` : '';
+    return `{{ youtube(id="${id}"${p}${a}${c}) }}`;
   },
   toPreview: function(obj) {
     const id = obj.id || '';
