@@ -16,10 +16,10 @@ CMS.registerEditorComponent({
   },
   toBlock: function(obj) {
     const id = obj.id || '';
-    return `{{ vimeo(id="${obj.id || ''}") }}`;
+    return `{{ vimeo(id="${id}") }}`;
   },
   toPreview: function(obj) {
     const id = obj.id || '';
-    return `{{ vimeo(id="${obj.id || ''}") }}`;
+    return `{{ vimeo(id="${id}") }}`;
   },
 });

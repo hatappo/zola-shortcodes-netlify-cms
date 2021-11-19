@@ -16,9 +16,10 @@ CMS.registerEditorComponent({
   },
   toBlock: function(obj) {
     const id = obj.id || '';
-    return `{{ youtube(id="${obj.id || ''}") }}`;
+    return `{{ youtube(id="${id}") }}`;
   },
   toPreview: function(obj) {
-    return `<img src="http://img.youtube.com/vi/${obj.id}/mqdefault.jpg" alt="Youtube Video"/>`;
+    const id = obj.id || '';
+    return `<img src="http://img.youtube.com/vi/${id}/mqdefault.jpg" alt="Youtube Video"/>`;
   },
 });
