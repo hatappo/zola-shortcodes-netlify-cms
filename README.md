@@ -17,12 +17,23 @@
 1. Chart
 2. Galleria
 3. Katex
-4. mapbox
+4. MapBox
 5. Mermaid
 6. Vimeo
 7. YouTube
 
 <img src="docs/screenshot-DeepThought-shortcodes-in-blogui.png" width="240px"> <img src="docs/screenshot-DeepThought-shortcodes-in-netlifycms.png" width="240px">
+
+
+- [Docs](https://github.com/RatanShreshtha/DeepThought/blob/main/content/docs/extended-shortcodes/index.md)
+- [HTML](https://github.com/RatanShreshtha/DeepThought/tree/main/templates/shortcodes)
+
+
+### [Theme - Juice](https://github.com/huhu/juice)
+
+1. Issue
+
+<img src="docs/screenshot-Juice-shortcodes-in-blogui.png" width="240px"> <img src="docs/screenshot-Juice-shortcodes-in-netlifycms.png" width="240px">
 
 
 - [Docs](https://github.com/RatanShreshtha/DeepThought/blob/main/content/docs/extended-shortcodes/index.md)
