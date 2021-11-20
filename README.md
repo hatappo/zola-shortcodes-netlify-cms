@@ -11,7 +11,7 @@
 3. Vimeo
 4. YouTube
 
-<img src="docs/screenshot-shortcodes-on-cms.png" width="480px">
+<img src="docs/screenshot-builtin-shortcodes-on-cms.png" width="480px">
 
 ### [Theme - DeepThought](https://github.com/RatanShreshtha/DeepThought)
 
@@ -23,22 +23,35 @@
 6. Vimeo
 7. YouTube
 
-<img src="docs/screenshot-DeepThought-shortcodes-in-blogui.png" width="240px"> <img src="docs/screenshot-DeepThought-shortcodes-in-netlifycms.png" width="240px">
+<img src="docs/screenshot-DeepThought-shortcodes-in-cms.png" width="360px"> <img src="docs/screenshot-DeepThought-shortcodes-in-site.png" width="360px">
 
 
 - [Docs](https://github.com/RatanShreshtha/DeepThought/blob/main/content/docs/extended-shortcodes/index.md)
-- [HTML](https://github.com/RatanShreshtha/DeepThought/tree/main/templates/shortcodes)
+- [Shortcodes HTML](https://github.com/RatanShreshtha/DeepThought/tree/main/templates/shortcodes)
 
 
 ### [Theme - Juice](https://github.com/huhu/juice)
 
-1. Issue
+1. GitHub Issue
 
-<img src="docs/screenshot-Juice-shortcodes-in-blogui.png" width="240px"> <img src="docs/screenshot-Juice-shortcodes-in-netlifycms.png" width="240px">
+<img src="docs/screenshot-juice-shortcodes-in-cms.png" width="360px"> <img src="docs/screenshot-juice-shortcodes-in-site.png" width="360px">
+
+
+- [Docs](https://github.com/huhu/juice#shortcodes)
+- [Shortcodes HTML](https://github.com/huhu/juice/tree/master/templates/shortcodes)
+
+
+### [Theme - Ergo](https://github.com/insipx/Ergo)
+
+1. Block quote
+1. Vimeo (vm.html)
+1. YouTube (yt.html)
+
+<img src="docs/screenshot-Ergo-shortcodes-in-cms.png" width="360px"> <img src="docs/screenshot-Ergo-shortcodes-in-site.png" width="360px">
 
 
 - [Docs](https://github.com/RatanShreshtha/DeepThought/blob/main/content/docs/extended-shortcodes/index.md)
-- [HTML](https://github.com/RatanShreshtha/DeepThought/tree/main/templates/shortcodes)
+- [Shortcodes HTML](https://github.com/insipx/Ergo/tree/master/templates/shortcodes)
 
 
 ## Usage
