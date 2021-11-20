@@ -15,6 +15,9 @@
 
 ### [Theme - DeepThought](https://github.com/RatanShreshtha/DeepThought)
 
+- [Shortcodes HTML](https://github.com/RatanShreshtha/DeepThought/tree/main/templates/shortcodes)
+- [Docs](https://github.com/RatanShreshtha/DeepThought/blob/main/content/docs/extended-shortcodes/index.md)
+
 1. Chart
 2. Galleria
 3. Katex
@@ -26,32 +29,25 @@
 <img src="docs/screenshot-DeepThought-shortcodes-in-cms.png" width="360px"> <img src="docs/screenshot-DeepThought-shortcodes-in-site.png" width="360px">
 
 
-- [Docs](https://github.com/RatanShreshtha/DeepThought/blob/main/content/docs/extended-shortcodes/index.md)
-- [Shortcodes HTML](https://github.com/RatanShreshtha/DeepThought/tree/main/templates/shortcodes)
-
-
 ### [Theme - Juice](https://github.com/huhu/juice)
+
+- [Shortcodes HTML](https://github.com/huhu/juice/tree/master/templates/shortcodes)
+- [Docs](https://github.com/huhu/juice#shortcodes)
 
 1. GitHub Issue
 
 <img src="docs/screenshot-juice-shortcodes-in-cms.png" width="360px"> <img src="docs/screenshot-juice-shortcodes-in-site.png" width="360px">
 
 
-- [Docs](https://github.com/huhu/juice#shortcodes)
-- [Shortcodes HTML](https://github.com/huhu/juice/tree/master/templates/shortcodes)
-
-
 ### [Theme - Ergo](https://github.com/insipx/Ergo)
+
+- [Shortcodes HTML](https://github.com/insipx/Ergo/tree/master/templates/shortcodes)
 
 1. Block quote
 1. Vimeo (vm.html)
 1. YouTube (yt.html)
 
 <img src="docs/screenshot-Ergo-shortcodes-in-cms.png" width="360px"> <img src="docs/screenshot-Ergo-shortcodes-in-site.png" width="360px">
-
-
-- [Docs](https://github.com/RatanShreshtha/DeepThought/blob/main/content/docs/extended-shortcodes/index.md)
-- [Shortcodes HTML](https://github.com/insipx/Ergo/tree/master/templates/shortcodes)
 
 
 ## Usage
