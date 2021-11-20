@@ -23,7 +23,7 @@ CMS.registerEditorComponent({
       widget: "string"
     },
   ],
-  pattern: /{{ youtube\(id="([-a-zA-Z0-9]+)"(, playlist="([a-zA-Z0-9]+)")?(, autoplay=(true|false))?(, class="([a-zA-Z][-_.:a-zA-Z0-9 ]*)")?\) }}/,
+  pattern: /{{ youtube\(id="([-_a-zA-Z0-9]+)"(, playlist="([-_a-zA-Z0-9]+)")?(, autoplay=(true|false))?(, class="([a-zA-Z][-_.:a-zA-Z0-9 ]*)")?\) }}/,
   fromBlock: function(match) {
     return {
       id: match[1],

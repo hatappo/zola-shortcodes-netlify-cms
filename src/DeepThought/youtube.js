@@ -8,7 +8,7 @@ CMS.registerEditorComponent({
       widget: "string"
     },
   ],
-  pattern: /{{ youtube\(id="([a-zA-Z0-9]+)"\) }}/,
+  pattern: /{{ youtube\(id="([-_a-zA-Z0-9]+)"\) }}/,
   fromBlock: function(match) {
     return {
       id: match[1],
