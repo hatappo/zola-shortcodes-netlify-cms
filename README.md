@@ -1,9 +1,10 @@
-# Zola Shortcodes for Netlify CMS Editor Components
+# Netlify CMS Editor Components for Zola Shortcodes
 
 
-## Shortcodes in Zola
+## Supported List
 
-### [Zola own built-in](https://www.getzola.org/documentation/content/shortcodes/#built-in-shortcodes)
+
+### [Built-in](https://www.getzola.org/documentation/content/shortcodes/#built-in-shortcodes)
 
 1. Gist
 2. Streamable
@@ -42,10 +43,10 @@
 
 ## Usage
 
-1. Add or checkout [dist/zola-shortcodes-netlify-cms.built-in.js](/dist/zola-shortcodes-netlify-cms.built-in.js) to the `static` directory in your Zola project.
-2. Then, load it after the `netlify-cms.js` script tag.
+1. Select the appropriate JS file for your Zola Theme in the [dist](/dist) and add it to the `static` directory in your Zola repository.
+2. Then, set it to be loaded after the `netlify-cms.js` script tag.
 
-e.g. If you put the JS file in `static/js` directory, you can write the following in `stacic/admin/index.html`
+e.g. If you put [zola-shortcodes-netlify-cms.built-in.js](/dist/zola-shortcodes-netlify-cms.built-in.js) in your `static/js` directory, you can write the following in `stacic/admin/index.html`
 
 ```html
 <!DOCTYPE html>
@@ -59,15 +60,29 @@ e.g. If you put the JS file in `static/js` directory, you can write the followin
   </head>
   <body>
     <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
-    <script src="/js/dist/zola-shortcodes-netlify-cms.built-in.js"></script><!-- HERE -->
+    <script src="/js/zola-shortcodes-netlify-cms.built-in.js"></script><!-- HERE -->
   </body>
 </html>
 ```
 
 
-## Original Shortcodes by Themes
+## Unique Shortcodes added by each theme 
 
-Choose one of `zola-shortcodes-netlify-cms.<THEME_NAME>.js` in `dist` directory, which you want.
+You can select the appropriate one from [dist](/dist).
+It's named like `zola-shortcodes-netlify-cms.<THEME_NAME>.js`.
+If you can't find a theme you use, nice to write it and PR it.
+
+
+## FAQ
+
+#### There is no appropriate Javascript file for your Theme in the `dist`
+
+It would be great if you could write it using the `src` folder as a reference and send a PR.
+
+
+#### If you use a xxxx theme, you should put and load two files like `*.built-in.js` and `*.xxxx.js` ?
+
+No. It's OK you select only one `*.xxxx.js`. It's merged one for built-in Shortcodes, and overwritten with duplicate them.
 
 
 ## Reference
