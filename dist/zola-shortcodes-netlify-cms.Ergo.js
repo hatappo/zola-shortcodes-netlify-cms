@@ -48,6 +48,47 @@ CMS.registerEditorComponent({
   },
 });
 CMS.registerEditorComponent({
+  id: "quote",
+  label: "Quote",
+  fields: [
+    {
+      name: "body",
+      label: "the body text",
+      widget: "text"
+    },
+    {
+      name: "author",
+      label: "ahuthor name",
+      widget: "string"
+    },
+  ],
+  pattern: /^{% quote\((author="([^\n]*)\")?\) %}\n(.*?)\n^{% end %}$/ms,
+  fromBlock: function(match) {
+    return {
+      author: match[2],
+      body: match[3],
+    };
+  },
+  toBlock: function(obj) {
+    const a = `author="${obj.author || ''}"`;
+    const body = obj.body || '';
+    return `
+{% quote(${a}) %}
+${body}
+{% end %}
+`;
+  },
+  toPreview: function(obj) {
+    const author = obj.author || undefined;
+    const body = obj.body || '';
+    return `
+{% quote(${a}) %}
+${body}
+{% end %}
+`;
+  },
+});
+CMS.registerEditorComponent({
   id: "streamable",
   label: "Streamable",
   fields: [
@@ -114,6 +155,39 @@ CMS.registerEditorComponent({
   },
 });
 CMS.registerEditorComponent({
+  id: "vm",
+  label: "vm (Vimeo)",
+  fields: [
+    {
+      name: "id",
+      label: "the video id (mandatory)",
+      widget: "string"
+    },
+    {
+      name: "class",
+      label: "a class to add to the <div> surrounding the iframe (optional)",
+      widget: "string"
+    },
+  ],
+  pattern: /{{ vm\(id="([-a-zA-Z0-9]+)"(, class="([a-zA-Z][-_.:a-zA-Z0-9 ]*)")?\) }}/,
+  fromBlock: function(match) {
+    return {
+      id: match[1],
+      class: match[3],
+    };
+  },
+  toBlock: function(obj) {
+    const id = obj.id || '';
+    const c = !!obj.class ? `, class="${obj.class}"` : '';
+    return `{{ vm(id="${id}"${c}) }}`;
+  },
+  toPreview: function(obj) {
+    const id = obj.id || '';
+    const c = !!obj.class ? `, class="${obj.class}"` : '';
+    return `{{ vm(id="${id}"${c}) }}`;
+  },
+});
+CMS.registerEditorComponent({
   id: "youtube",
   label: "YouTube",
   fields: [
@@ -153,6 +227,45 @@ CMS.registerEditorComponent({
     const a = !!obj.autoplay ? `, autoplay=${obj.autoplay}` : '';
     const c = !!obj.class ? `, class="${obj.class}"` : '';
     return `{{ youtube(id="${id}"${p}${a}${c}) }}`;
+  },
+  toPreview: function(obj) {
+    const id = obj.id || '';
+    return `<img src="http://img.youtube.com/vi/${id}/mqdefault.jpg" alt="Youtube Video"/>`;
+  },
+});
+CMS.registerEditorComponent({
+  id: "yt",
+  label: "yt (YouTube)",
+  fields: [
+    {
+      name: "id",
+      label: "the video id (mandatory)",
+      widget: "string"
+    },
+    {
+      name: "autoplay",
+      label: "when set to \"true\", the video autoplays on load (optional)",
+      widget: "boolean"
+    },
+    {
+      name: "class",
+      label: "a class to add to the <div> surrounding the iframe (optional)",
+      widget: "string"
+    },
+  ],
+  pattern: /{{ youtube\(id="([-_a-zA-Z0-9]+)"(, autoplay=(true|false))?(, class="([a-zA-Z][-_.:a-zA-Z0-9 ]*)")?\) }}/,
+  fromBlock: function(match) {
+    return {
+      id: match[1],
+      autoplay: match[3],
+      class: match[5],
+    };
+  },
+  toBlock: function(obj) {
+    const id = obj.id || '';
+    const a = !!obj.autoplay ? `, autoplay=${obj.autoplay}` : '';
+    const c = !!obj.class ? `, class="${obj.class}"` : '';
+    return `{{ youtube(id="${id}"${a}${c}) }}`;
   },
   toPreview: function(obj) {
     const id = obj.id || '';
